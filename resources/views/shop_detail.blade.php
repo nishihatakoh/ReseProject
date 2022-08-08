@@ -8,9 +8,9 @@
     <div>
         <nav class="nav" id="nav">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Registration</a></li>
-                <li><a href="#">Login</a></li>
+                <li><a href="{{ route('shop_all.index') }}">Home</a></li>
+                <li><a href="{{ route('register.index') }}">Registration</a></li>
+                <li><a href="{{ route('login.index') }}">Login</a></li>
             </ul>
         </nav>
     </div>
@@ -29,34 +29,51 @@
             <div class="card">
                 <div class="card_header">
                     <button class="card_button"><</button>
-                    <h2 class="card_ttl">仙人</h2>
+                    <h2 class="card_ttl">{{$shop->shop_name}}</h2>
                 </div>
-                <img src="https://coachtech-matter.s3-ap-northeast-1.amazonaws.com/image/sushi.jpg" alt="">
+                <img src="{{$shop->image}}">
                 <div class="card_category">
-                    <p>#area</p>
-                    <p>#genre</p>
+                    <p>#{{$shop->genre->genre_name}}</p>
+                    <p>#{{$shop->area->area_name}}</p>
                 </div>
-                <p class="card_text">料理長厳選の食材から作る寿司を用いたコースをぜひお楽しみください。食材・味・価格、お客様の満足度を徹底的に追及したお店です。特別な日のお食事、ビジネス接待まで気軽に使用することができます。</p>
+                <p class="card_text">{{$shop->text}}</p>
             </div>
         </div>
         <div class="reserve">
             <form action="">
                 <div class="reserve_item">
                     <h2 class="reserve_ttl">予約</h2>
-                    <input class="date" type="date">
-                    <select name="" id="">
-
+                    <input class="date" type="date" id="date" name="date">
+                    <select name="" id="time">
+                        @for($i = 16; $i < 24; $i++)
+                                <option value="{{$i}}:00">{{$i}}:00</option>  
+                                <option value="{{$i}}:30">{{$i}}:30</option>  
+                        @endfor
                     </select>
-                    <select name="" id="">
-
+                    <select name="" id="number">
+                        @for($i = 1; $i <= 10; $i++)
+                                <option value="{{$i}}">{{$i}}人</option>  
+                        @endfor
                     </select>
                     <div class="table">
                         <div class="table_item">
                             <table>
-                                <tr><th>Shop</th><td>仙人</td></tr>
-                                <tr><th>Date</th><td>2020-04-01</td></tr>
-                                <tr><th>Time</th><td>17:00</td></tr>
-                                <tr><th>Number</th><td>1人</td></tr>
+                                <tr>
+                                    <th>Shop</th>
+                                    <td>{{$shop->shop_name}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Date</th>
+                                    <td id="output"></td>
+                                </tr>
+                                <tr>
+                                    <th>Time</th>
+                                    <td id="selecttime"></td>
+                                </tr>
+                                <tr>
+                                    <th>Number</th>
+                                    <td id="selectnumber"></td>
+                                </tr>
                             </table>
                         </div>
                     </div>

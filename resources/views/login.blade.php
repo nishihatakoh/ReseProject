@@ -28,7 +28,7 @@
         <div class="card">
             <h2 class="card_ttl">Login</h2>
             <div class="card_content">
-                <form action="/mypage" method="post">
+                <form action="{{ route('login.login') }}" method="POST">
                     @csrf
                     <div class="card_item">
                         <div class="mail-solid icon"></div>
@@ -44,7 +44,7 @@
                     @if ($errors->has('password'))
                         <p class="error">{{$errors->first('password')}}</p>
                     @endif
-                    <input class="card_button" type="submit" value="ログイン"  >
+                    <input class="card_button" type="submit" value="ログイン">
                 </form>
             </div>
         </div>

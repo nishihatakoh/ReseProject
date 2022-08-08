@@ -162,6 +162,13 @@ form{
     outline:none;
 }
 
+.header-button{
+    background-color: white;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
 /* メイン */
 main{
     width: 90%;

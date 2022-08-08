@@ -8,8 +8,8 @@
         <nav class="nav" id="nav">
             <ul>
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Registration</a></li>
-                <li><a href="#">Login</a></li>
+                <li><a href="{{ route('mypage.logout') }}">logout</a></li>
+                <li><a href="#">mypage</a></li>
             </ul>
         </nav>
     </div>

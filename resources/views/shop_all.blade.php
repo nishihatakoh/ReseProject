@@ -23,15 +23,22 @@
                 <h1 class="header-ttl">Rese</h1>
             </div>
             <div class="header-search">
-                <form action="" method="POST">
-                    <select class="header-area"name="" id="" value="">
-
+                <form action="{{ route('shop_all.find') }}" method="POST">
+                    @csrf
+                    <select class="header-area" name="area_id">
+                        <option value="">All area</option>
+                        @foreach($areamasters as $areamaster)
+                        <option value="{{$areamaster->id}}">{{$areamaster->area_name}}</option>
+                        @endforeach
                     </select>
-                    <select class="header-genre" name="" id="">
-
+                    <select class="header-genre" name="genre_id">
+                        <option value="">All genre</option>
+                        @foreach($genremasters as $genremaster)
+                        <option value="{{$genremaster->id}}">{{$genremaster->genre_name}}</option>
+                        @endforeach
                     </select>
-                    <img class="header-img" src="{{ asset('img/検索用の虫眼鏡アイコン素材.png') }}" alt="">
-                    <input class="header-text" type="text" >
+                    <input class="header-text" type="text" name="shop_name">
+                    <button class="header-button"><img class="header-img" src="{{ asset('img/検索用の虫眼鏡アイコン素材.png') }}"></button>
                 </form>
             </div>
         </div>
@@ -39,85 +46,26 @@
 </header>
 <main>
     <div class="main">
+        @foreach($items as $item)
         <div class="card">
             <div>
-                <img class="card-img" src="https://coachtech-matter.s3-ap-northeast-1.amazonaws.com/image/sushi.jpg" alt="">
+                <img class="card-img" src="{{ $item->image }}">
             </div>
             <div class="card-content">
-                <h2 class="card-name">仙人</h2>
+                <h2 class="card-name">{{$item->shop_name}}</h2>
                 <div class="card-category">
-                    <p>#genre</p>
-                    <p>#area</p>
+                    <p>#{{$item->genre->genre_name}}</p>
+                    <p>#{{$item->area->area_name}}</p>
                 </div>
                 <div class="card-bottom">
-                    <button class="card-bottom_button">詳しく見る</button>
+                    <form action="{{ route('shop_all.detail', ['id' => $item->id]) }}" method="post">
+                        @csrf
+                        <button class="card-bottom_button">詳しく見る</button>
+                    </form>
                     <div class="heart">ハート</div>
                 </div>
             </div>
         </div>
-        <div class="card">
-            <div>
-                <img class="card-img" src="https://coachtech-matter.s3-ap-northeast-1.amazonaws.com/image/yakiniku.jpg" alt="">
-            </div>
-            <div class="card-content">
-                <h2 class="card-name">〇〇</h2>
-                <div class="card-category">
-                    <p>#genre</p>
-                    <p>#area</p>
-                </div>
-                <div class="card-bottom">
-                    <button class="card-bottom_button">詳しく見る</button>
-                    <div class="heart">ハート</div>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div>
-                <img class="card-img" src="https://coachtech-matter.s3-ap-northeast-1.amazonaws.com/image/izakaya.jpg" alt="">
-            </div>
-            <div class="card-content">
-                <h2 class="card-name">〇〇</h2>
-                <div class="card-category">
-                    <p>#genre</p>
-                    <p>#area</p>
-                </div>
-                <div class="card-bottom">
-                    <button class="card-bottom_button">詳しく見る</button>
-                    <div class="heart">ハート</div>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div>
-                <img class="card-img" src="https://coachtech-matter.s3-ap-northeast-1.amazonaws.com/image/italian.jpg" alt="">
-            </div>
-            <div class="card-content">
-                <h2 class="card-name">〇〇</h2>
-                <div class="card-category">
-                    <p>#genre</p>
-                    <p>#area</p>
-                </div>
-                <div class="card-bottom">
-                    <button class="card-bottom_button">詳しく見る</button>
-                    <div class="heart">ハート</div>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div>
-                <img class="card-img" src="https://coachtech-matter.s3-ap-northeast-1.amazonaws.com/image/ramen.jpg" alt="">
-            </div>
-            <div class="card-content">
-                <h2 class="card-name">〇〇</h2>
-                <div class="card-category">
-                    <p>#genre</p>
-                    <p>#area</p>
-                </div>
-                <div class="card-bottom">
-                    <button class="card-bottom_button">詳しく見る</button>
-                    <div class="heart">ハート</div>
-                </div>
-            </div>
-        </div>
+        @endforeach
     </div>
 </main>

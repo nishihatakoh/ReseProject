@@ -20,7 +20,7 @@ class CreateShopsTable extends Migration
             $table->integer('genre_id');
             $table->text('text');
             $table->string('image');
-            $table->integer('favorite');
+            $table->integer('favorite')->nullable();
             $table->timestamps();
         });
     }
