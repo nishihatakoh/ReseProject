@@ -40,17 +40,19 @@
             </div>
         </div>
         <div class="reserve">
-            <form action="">
+            <form action="{{ route('shop_detail.reserve') }}" method="post">
+                @csrf
                 <div class="reserve_item">
                     <h2 class="reserve_ttl">予約</h2>
+                    <input type="hidden" name="shop_id" value="{{$shop->id}}">
                     <input class="date" type="date" id="date" name="date">
-                    <select name="" id="time">
+                    <select name="time" id="time">
                         @for($i = 16; $i < 24; $i++)
                                 <option value="{{$i}}:00">{{$i}}:00</option>  
                                 <option value="{{$i}}:30">{{$i}}:30</option>  
                         @endfor
                     </select>
-                    <select name="" id="number">
+                    <select name="number" id="number">
                         @for($i = 1; $i <= 10; $i++)
                                 <option value="{{$i}}">{{$i}}人</option>  
                         @endfor

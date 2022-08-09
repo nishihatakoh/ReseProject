@@ -25,7 +25,7 @@ class ReserveRequest extends FormRequest
     {
         return [
             'date' => 'required|date|',
-            'time' => 'required|time|',
+            'time' => 'required',
             'number' => 'required|integer|',
         ];
     }

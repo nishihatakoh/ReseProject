@@ -37,10 +37,10 @@
                     <div class="table">
                         <div class="table_item">
                             <table>
-                                <tr><th>Shop</th><td>仙人</td></tr>
-                                <tr><th>Date</th><td>2020-04-01</td></tr>
-                                <tr><th>Time</th><td>17:00</td></tr>
-                                <tr><th>Number</th><td>1人</td></tr>
+                                <tr><th>Shop</th><td>{{ $items->shop->shop_name }}</td></tr>
+                                <tr><th>Date</th><td>{{ $items->date }}</td></tr>
+                                <tr><th>Time</th><td>{{ $items->time }}</td></tr>
+                                <tr><th>Number</th><td>{{ $items->number }}人</td></tr>
                             </table>
                         </div>
                     </div>

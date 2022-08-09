@@ -26,6 +26,6 @@
 <main>
     <div class="main">
         <h2 class="main_ttl">ご予約ありがとうございます</h2>
-        <button class="card_button">戻る</button>
+        <a href="{{ route('mypage.index') }}"  class="card_button">戻る</a>
     </div>
 </main>

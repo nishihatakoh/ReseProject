@@ -20,4 +20,9 @@ class shop extends Model
     {
         return $this->belongsTo('App\Models\areamaster');
     }
+
+    public function reserve(){
+        return $this->hasMany('App\Models\reserve');
+    }
 }
+
