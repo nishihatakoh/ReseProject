@@ -24,5 +24,13 @@ class shop extends Model
     public function reserve(){
         return $this->hasMany('App\Models\reserve');
     }
+
+    public function favorite(){
+        return $this->hasMany('App\Models\favorite');
+    }
+
+    public function isLikedBy($user): bool {
+        return favorite::where('user_id', $user->id)->where('shop_id', $this->id)->first() !==null;
+    }
 }
 

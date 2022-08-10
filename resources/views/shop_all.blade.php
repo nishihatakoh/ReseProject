@@ -8,9 +8,9 @@
     <div>
         <nav class="nav" id="nav">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Registration</a></li>
-                <li><a href="#">Login</a></li>
+                <li><a href="{{ route('shop_all.index') }}">Home</a></li>
+                <li><a href="{{ route('mypage.logout') }}">Logout</a></li>
+                <li><a href="{{ route('mypage.index') }}">Mypage</a></li>
             </ul>
         </nav>
         <div class="header">
@@ -62,7 +62,21 @@
                         @csrf
                         <button class="card-bottom_button">詳しく見る</button>
                     </form>
-                    <div class="heart">ハート</div>
+                    @if($favorite)
+                        <form action="{{ route('shop_all.unfavorite', ['id' => $favorite->id]) }}" method="post">
+                            @csrf
+                            <button class="heart_button">
+                                <div class="heart"></div>
+                            </button>
+                        </form>
+                    @else
+                        <form action="{{ route('shop_all.favorite', ['shop_id' => $item->id]) }}" method="post">
+                            @csrf
+                            <button class="heart_button">
+                                <div class="whiteheart"></div>
+                            </button>
+                        </form>
+                    @endif
                 </div>
             </div>
         </div>

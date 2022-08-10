@@ -11,6 +11,7 @@ a {
     background: white;
     transition: .7s;
     text-align: center;
+    z-index: 100;
 }
 
 .nav ul {
@@ -20,6 +21,7 @@ a {
 .nav ul li {
     list-style-type: none;
     margin-top: 50px;
+    font-size: 30px;
 }
 
 .menu {
@@ -32,6 +34,7 @@ a {
     border-radius: 5px;
     padding-left: 5px;
     box-shadow: 3px 3px 3px #AAA;
+    z-index: 100;
 }
 
 .menu__line--top,
@@ -196,7 +199,9 @@ header{
     padding-left:30px
 }
 
-
+.button-close{
+    margin-left: auto;
+}
 
 .btn-close {
     display: inline-block;
@@ -310,6 +315,58 @@ td {
     border-radius: 5px;
     appearance: none;
     outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.heart {
+    width: 30px;
+    /* 正方形を作る */
+    height: 30px;
+    /* 正方形を作る */
+    position: relative;
+    /* 基準位置とする */
+    z-index: 0;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    /* 疑似要素に必須 */
+    width: 50%;
+    /* ハートの丸い部分の大きさにかかわる */
+    height: 80%;
+    /* ハートの高さにかかわる */
+    background: #E0548E;
+    /* ハートの色 */
+    border-radius: 25px 25px 0 0;
+    /* ハートの半円を生成 */
+    display: block;
+    /* ブロック要素にする */
+    position: absolute;
+    /* 相対位置に指定 */
+    z-index: 0;
+}
+
+.heart::before {
+    transform: rotate(-45deg);
+    /* 左に回転 */
+    left: 14%;
+    /* 左からの位置を指定 */
+    z-index: 0;
+}
+
+.heart::after {
+    transform: rotate(45deg);
+    /* 右に回転 */
+    right: 14%;
+    /* 右からの位置を指定 */
+    z-index: 0;
+}
+
+.heart_button {
+    outline: none;
+    background-color: white;
     border: none;
     cursor: pointer;
 }

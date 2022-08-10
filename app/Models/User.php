@@ -45,4 +45,8 @@ class User extends Authenticatable
     public function reserve(){
         return $this->hasMany('App\Models\reserve');
     }
+
+    public function favorite(){
+        return $this->hasMany('App\Models\favorite');
+    }
 }

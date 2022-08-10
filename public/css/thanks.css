@@ -21,6 +21,7 @@ a {
 .nav ul li {
     list-style-type: none;
     margin-top: 50px;
+    font-size: 30px;
 }
 
 .menu {

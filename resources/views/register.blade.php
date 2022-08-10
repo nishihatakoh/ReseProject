@@ -7,9 +7,9 @@
     <div>
         <nav class="nav" id="nav">
             <ul>
-                <li><a href="/shop_all">Home</a></li>
-                <li><a href="/register">Registration</a></li>
-                <li><a href="/login">Login</a></li>
+                <li><a href="{{ route('shop_all.index') }}">Home</a></li>
+                <li><a href="{{ route('mypage.logout') }}">Logout</a></li>
+                <li><a href="{{ route('mypage.index') }}">Mypage</a></li>
             </ul>
         </nav>
     </div>

@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\shop;
+use App\Models\favorite;
 use App\Models\areamaster;
 use App\Models\genremaster;
-use App\Http\Controllers\Auth;
+use Illuminate\Support\Facades\Auth;
 
 class Shop_allController extends Controller
 {
@@ -15,7 +16,8 @@ class Shop_allController extends Controller
         $items = shop::with('genre')->with('area')->get();
         $areamasters = areamaster::all();
         $genremasters = genremaster::all();
-        return view('shop_all' , compact('items','genremasters','areamasters'));
+        $favorite = favorite::all()->first();
+        return view('shop_all' , compact('items','areamasters', 'genremasters','favorite'));
     }
 
     public function find(Request $request)
@@ -40,7 +42,7 @@ class Shop_allController extends Controller
         $areamasters = areamaster::all();
         $genremasters = genremaster::all();
 
-        return view('shop_all', compact('items', 'shop_name', 'area_id', 'genre_id', 'areamasters', 'genremasters'));
+        return view('shop_all', compact('items', 'shop_name', 'area_id', 'genre_id','areamasters', 'genremasters'));
     }
 
     public function detail(Request $request)
@@ -48,4 +50,23 @@ class Shop_allController extends Controller
         $shop = Shop::find($request->id);
         return view('shop_detail' , compact('shop'));
     }
+
+    public function favorite(Request $request)
+    {
+        $user_id = Auth::id();
+        $shop_id = $request->shop_id;
+        favorite::create([
+            'user_id' => $user_id,
+            'shop_id' => $shop_id,
+        ]);
+        return back();
+    }
+
+    public function unfavorite(Request $request)
+    {
+        favorite::find($request->id)->delete();
+        return back();
+    } 
+
+
 }
