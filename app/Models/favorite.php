@@ -20,6 +20,16 @@ class favorite extends Model
     {
         return $this->belongsTo('App\Models\shop');
     }
+    //いいねが既にされているかを確認
+    public function favorite_exist($id, $shop_id)
+    {
+        $exist = favorite::where('user_id', '=', $id)->where('shop_id', '=', $shop_id)->get();
 
+        if (!$exist->isEmpty()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     
 }

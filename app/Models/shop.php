@@ -21,7 +21,11 @@ class shop extends Model
         return $this->belongsTo('App\Models\areamaster');
     }
 
-    public function reserve(){
+    public function owner(){ 
+        return $this->belongsTo('App\Models\owner');
+    }
+
+    public function reserves(){
         return $this->hasMany('App\Models\reserve');
     }
 

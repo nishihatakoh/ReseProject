@@ -114,18 +114,22 @@ header{
 
 /* 　　　　　メイン　　　　　　 */
 
+.user_name{
+    display: block;
+    font-size: 30px;
+    text-align: center;
+}
 .main{
     display: flex;
     justify-content: space-between;
     width: 85%;
-    margin: 0 auto;
+    margin: 30px auto;
 }
 
 /* 　　　　予約状況　　　　　 */
 
 .reserve{
     width: 35%;
-    margin-top: 70px;
 }
 
 .reserve_ttl {
@@ -232,6 +236,7 @@ header{
 .table {
     width: 100%;
     margin: 30px 0;
+    text-align: right;
 }
 
 
@@ -246,16 +251,25 @@ th {
 td {
     color: white;
 }
+
+.reserve_button {
+    display: inline-block;
+    font-size: 15px;
+    color: white;
+    background-color: #4689FF;
+    padding:5px;
+    margin:0 0 10px 0;
+    border-radius: 5px;
+    text-align: right;
+    font-weight: 400;
+    border: none;
+    cursor: pointer;
+}
 /* 　　　　　　お気に入り　　　　　 */
 
 .favorite{ 
     width: 55%;
     
-}
-
-.favorite_ttl{
-    font-size: 30px;
-    height: 70px;
 }
 
 .favorite_ttl2 {
@@ -267,11 +281,13 @@ td {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .card_item{
     width: 45%;
     box-shadow: 3px 3px 3px #AAA;
+    margin-bottom: 30px;
 }
 
 .card-img{
@@ -369,4 +385,49 @@ td {
     background-color: white;
     border: none;
     cursor: pointer;
+}
+
+/*   レスポンシブデザイン   */
+
+@media screen and (max-width : 1055px) {
+    .card-bottom_button{
+        font-size: 15px;
+    }
+    .heart {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media screen and (max-width : 937px) {
+    .card-bottom_button {
+        font-size: 10px;
+    }
+    .card-category{
+        font-size: 15px;
+    }
+        .heart {
+            width: 15px;
+            height: 15px;
+        }
+}
+@media screen and (max-width : 768px) {
+    .main{
+        flex-flow: column;
+    }
+
+    .reserve {
+        width: 95%;
+    }
+
+    .favorite{
+        width: 95%;
+    }
+}
+
+@media screen and (max-width : 480px) {
+
+    .card_item{
+        width: 100%;
+    }
 }

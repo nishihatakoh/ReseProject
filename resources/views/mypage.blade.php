@@ -24,6 +24,7 @@
     </div>
 </header>
 <main>
+    <h2 class="user_name">{{Auth::user()->user_name}}さん</h2>
     <div class="main">
         <div class="reserve">
             <h3 class="reserve_ttl">予約状況</h3>
@@ -33,33 +34,36 @@
                     <div class="reserve_title">
                         <div class="clock icon"></div>
                         <p class="reserve_number">予約</p>
-                        <form class="button-close"action="{{ route('mypage.delete', ['id' => $reserve->id]) }}" method="post">
+                        <form class="button-close" action="{{ route('mypage.delete', ['id' => $reserve->id]) }}" method="post">
                             @csrf
                             <button><span class="btn-close"></span></button>
                         </form>
                     </div>
                     <div class="table">
                         <div class="table_item">
-                            <table>
-                                <tr>
-                                    <th>Shop</th>
-                                    <td>{{ $reserve->shop->shop_name }}</td>
-                                </tr>
-                                <tr>
-                                    <th>Date</th>
-                                    <td>{{ $reserve->date }}</td>
-                                </tr>
-                                <tr><th>Time</th><td>{{ $reserve->time }}</td></tr>
-                                <tr><th>Number</th><td>{{ $reserve->number }}人</td></tr>
-                            </table>
+                            <form action="{{ route('change.index', ['id' => $reserve->id]) }}" method="post">
+                                @csrf
+                                <table>
+                                    <tr>
+                                        <th>Shop</th>
+                                        <td>{{ $reserve->shop->shop_name }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Date</th>
+                                        <td>{{ $reserve->date }}</td>
+                                    </tr>
+                                    <tr><th>Time</th><td>{{ $reserve->time }}</td></tr>
+                                    <tr><th>Number</th><td>{{ $reserve->number }}人</td></tr>
+                                </table>
                         </div>
+                            <button class="reserve_button">予約変更はこちら</button>
+                        </form>
                     </div>
                 </div>
             </div>
             @endforeach
         </div>
         <div class="favorite">
-            <h2 class="favorite_ttl">{{Auth::user()->user_name}}さん</h2>
             <h3 class="favorite_ttl2">お気に入り店舗</h3>
             <div class="card">
                 @foreach($favorites as $favorite)

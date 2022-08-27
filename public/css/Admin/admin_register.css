@@ -1,0 +1,306 @@
+a {
+    text-decoration: none;
+    color: 3333FF;
+}
+
+.nav {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    left: -100%;
+    background: white;
+    transition: .7s;
+    text-align: center;
+    z-index: 100;
+}
+
+.nav ul {
+    padding-top: 80px;
+}
+
+.nav ul li {
+    list-style-type: none;
+    margin-top: 50px;
+    font-size: 30px;
+}
+
+.menu {
+    display: inline-block;
+    width: 36px;
+    height: 40px;
+    cursor: pointer;
+    position: relative;
+    background-color: #3333FF;
+    border-radius: 5px;
+    padding-left: 5px;
+    box-shadow: 3px 3px 3px #AAA;
+    z-index: 100;
+}
+
+.menu__line--top,
+.menu__line--middle,
+.menu__line--bottom {
+    display: inline-block;
+    height: 1px;
+    background-color: white;
+    position: absolute;
+    transition: 0.5s;
+
+}
+
+.menu__line--top {
+    top: 10px;
+    width: 30%;
+}
+
+.menu__line--middle {
+    top: 20px;
+    width: 70%;
+}
+
+.menu__line--bottom {
+    bottom: 9px;
+    width: 20%;
+}
+
+.menu.open span:nth-of-type(1) {
+    top: 20px;
+    right: 0.5px;
+    transform: rotate(45deg);
+    width: 100%;
+    height: 2px;
+}
+
+.menu.open span:nth-of-type(2) {
+    opacity: 0;
+}
+
+.menu.open span:nth-of-type(3) {
+    top: 20px;
+    right: 0.5px;
+    transform: rotate(-45deg);
+    width: 100%;
+    height: 2px;
+}
+
+.in {
+    transform: translateX(100%);
+}
+
+/* ヘッダー */
+
+header {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.header {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    width: 45%;
+}
+
+.header-logo {
+    display: flex;
+}
+
+.header-ttl {
+    font-size: 30px;
+    font-weight: 900;
+    color: #3333FF;
+    padding: 5px 30px;
+}
+
+/* ==================================
+メイン
+===================================== */
+
+main {
+    height: 100vh;
+    text-align: center;
+}
+
+.admin{
+    font-size: 30px;
+    margin-top: 50px;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    width: 30%;
+    margin: 50px 0;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px #AAA;
+}
+
+.card_ttl {
+    background-color: #3333FF;
+    color: white;
+    border-radius: 5px 5px 0 0;
+    padding: 20px;
+    text-align: left;
+}
+
+.card_content {
+    padding: 30px;
+}
+
+.card_item {
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.profile-solid.icon {
+    color: #000;
+    position: absolute;
+    margin-left: 3px;
+    margin-top: 11px;
+    width: 14px;
+    height: 6px;
+    border-left: solid 1px currentColor;
+    border-right: solid 1px currentColor;
+    border-top: solid 1px currentColor;
+    border-bottom: solid 1px transparent;
+    background-color: currentColor;
+    border-radius: 6px 6px 0 0;
+}
+
+.profile-solid.icon:before {
+    content: '';
+    position: absolute;
+    left: 2px;
+    top: -10px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: solid 1px currentColor;
+    background-color: currentColor;
+}
+
+.mail-solid.icon {
+    color: #000;
+    position: absolute;
+    margin-left: 2px;
+    margin-top: 4px;
+    width: 15px;
+    height: 10px;
+    border-radius: 1px;
+    border: solid 1px currentColor;
+    background-color: currentColor;
+    z-index: 2;
+}
+
+.mail-solid.icon:before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: -4px;
+    width: 1px;
+    height: 10px;
+    color: white;
+    background-color: currentColor;
+    -webkit-transform-origin: bottom;
+    transform-origin: bottom;
+    -webkit-transform: rotate(-54deg);
+    transform: rotate(-54deg);
+    z-index: 2;
+}
+
+.card_input {
+    margin-left: 40px;
+    width: 90%;
+    border: none;
+    border-bottom: 1px solid #AAA;
+    height: 25px;
+    outline: none;
+    color: #AAA;
+    font-size: 15px;
+}
+
+.mail-solid.icon:after {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: -4px;
+    width: 1px;
+    height: 10px;
+    color: white;
+    background-color: currentColor;
+    -webkit-transform-origin: bottom;
+    transform-origin: bottom;
+    -webkit-transform: rotate(54deg);
+    transform: rotate(54deg);
+    z-index: 2;
+}
+
+.lock-solid.icon {
+    color: #000;
+    position: absolute;
+    margin-left: 3px;
+    margin-top: 10px;
+    width: 13px;
+    height: 6px;
+    border-radius: 1px;
+    border: solid 1px currentColor;
+    background-color: currentColor;
+    z-index: 2;
+}
+
+.lock-solid.icon:before {
+    content: '';
+    position: absolute;
+    left: 3px;
+    top: -8px;
+    width: 5px;
+    height: 6px;
+    border-radius: 4px 4px 0 0;
+    border-top: solid 1px currentColor;
+    border-left: solid 1px currentColor;
+    border-right: solid 1px currentColor;
+    z-index: 2;
+}
+
+.card_button {
+    display: block;
+    font-size: 15px;
+    padding: 5px 15px;
+    color: white;
+    background-color: #3333FF;
+    border-radius: 5px;
+    appearance: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.error {
+    background-color: #FFBEDA;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+/*   レスポンシブデザイン   */
+
+
+@media screen and (max-width : 768px) {
+    .card {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width : 480px) {
+    .card {
+        width: 95%;
+    }
+}

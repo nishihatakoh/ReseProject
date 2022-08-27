@@ -62,8 +62,8 @@
                         @csrf
                         <button class="card-bottom_button">詳しく見る</button>
                     </form>
-                    @if($favorite)
-                        <form action="{{ route('shop_all.unfavorite', ['id' => $favorite->id]) }}" method="post">
+                    @if($favorite->favorite_exist(Auth::user()->id,$item->id))
+                        <form action="{{ route('shop_all.favorite', ['shop_id' => $item->id]) }}" method="post">
                             @csrf
                             <button class="heart_button">
                                 <div class="heart"></div>

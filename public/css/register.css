@@ -127,7 +127,7 @@ main {
 }
 
 .card {
-    width: 25%;
+    width: 30%;
     margin: 100px 0;
     background-color: white;
     border-radius: 5px;
@@ -281,4 +281,19 @@ main {
     padding: 5px;
     font-size: 12px;
     margin-bottom: 10px;
+}
+
+/*   レスポンシブデザイン   */
+
+
+@media screen and (max-width : 768px) {
+    .card{
+        width: 70%;
+    }
+}
+
+@media screen and (max-width : 480px) {
+    .card {
+        width: 95%;
+    }
 }

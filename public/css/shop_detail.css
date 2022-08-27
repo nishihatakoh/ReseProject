@@ -228,3 +228,30 @@ form{
     flex-direction: column;
     width: 100%;
 }
+
+.error {
+    background-color: #FFBEDA;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+/*   レスポンシブデザイン   */
+
+
+@media screen and (max-width : 768px) {
+    .main{
+        flex-flow: column;
+    }
+    .main_item{
+        width: 95%;
+    }
+    .reserve{
+        width: 95%;
+    }
+}
+
+@media screen and (max-width : 480px) {
+    
+}

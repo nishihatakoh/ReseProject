@@ -41,8 +41,9 @@ class Shop_allController extends Controller
         $items = $query->get();
         $areamasters = areamaster::all();
         $genremasters = genremaster::all();
+        $favorite = favorite::all()->first();
 
-        return view('shop_all', compact('items', 'shop_name', 'area_id', 'genre_id','areamasters', 'genremasters'));
+        return view('shop_all', compact('items', 'shop_name', 'area_id', 'genre_id','areamasters', 'genremasters','favorite'));
     }
 
     public function detail(Request $request)
@@ -53,20 +54,19 @@ class Shop_allController extends Controller
 
     public function favorite(Request $request)
     {
-        $user_id = Auth::id();
+        $id = Auth::user()->id;
         $shop_id = $request->shop_id;
-        favorite::create([
-            'user_id' => $user_id,
-            'shop_id' => $shop_id,
-        ]);
+        $favorite = new favorite;
+        $shop = shop::findOrFail($shop_id);
+
+        if ($favorite->favorite_exist($id, $shop_id)) {
+            $favorite = favorite::where('shop_id', $shop_id)->where('user_id', $id)->delete();
+        } else {
+            $favorite = new favorite;
+            $favorite->shop_id = $request->shop_id;
+            $favorite->user_id = Auth::user()->id;
+            $favorite->save();
+        }
         return back();
     }
-
-    public function unfavorite(Request $request)
-    {
-        favorite::find($request->id)->delete();
-        return back();
-    } 
-
-
 }

@@ -155,6 +155,7 @@ return [
     */
 
     'attributes' => [
+        'owner_name' =>'お名前',
         'user_name' => 'お名前',
         'email' => 'メールアドレス',
         'password' => 'パスワード',

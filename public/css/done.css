@@ -117,12 +117,13 @@ header {
 ===================================== */
 
 .main {
-    width: 30%;
+    width: 40%;
     height: 40%;
     margin: 0 auto;
     background-color: white;
     border-radius: 5px;
     box-shadow: 3px 3px 3px #AAA;
+    text-align: center;
 }
 
 .main_ttl {
@@ -133,15 +134,27 @@ header {
 }
 
 .card_button {
-    display: block;
+    display: inline-block;
     font-size: 15px;
     padding: 5px 15px;
     color: white;
     background-color: #3333FF;
     border-radius: 5px;
-    appearance: none;
-    outline: none;
-    border: none;
     cursor: pointer;
-    margin: 30px auto;
+    margin-top:30px;
+}
+
+/*   レスポンシブデザイン   */
+
+
+@media screen and (max-width : 768px) {
+    .main {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width : 480px) {
+    .main {
+        width: 95%;
+    }
 }

@@ -28,7 +28,6 @@
         </div>
             <div class="card">
                 <div class="card_header">
-                    <button class="card_button"><</button>
                     <h2 class="card_ttl">{{$shop->shop_name}}</h2>
                 </div>
                 <img src="{{$shop->image}}">
@@ -46,17 +45,28 @@
                     <h2 class="reserve_ttl">予約</h2>
                     <input type="hidden" name="shop_id" value="{{$shop->id}}">
                     <input class="date" type="date" id="date" name="date">
+                    @if ($errors->has('date'))
+                        <p class="error">{{$errors->first('date')}}</p>
+                    @endif
                     <select name="time" id="time">
+                        <option value=""></option>
                         @for($i = 16; $i < 24; $i++)
                                 <option value="{{$i}}:00">{{$i}}:00</option>  
                                 <option value="{{$i}}:30">{{$i}}:30</option>  
                         @endfor
                     </select>
+                    @if ($errors->has('time'))
+                        <p class="error">{{$errors->first('time')}}</p>
+                    @endif
                     <select name="number" id="number">
+                        <option value=""></option>
                         @for($i = 1; $i <= 10; $i++)
                                 <option value="{{$i}}">{{$i}}人</option>  
                         @endfor
                     </select>
+                    @if ($errors->has('number'))
+                        <p class="error">{{$errors->first('number')}}</p>
+                    @endif
                     <div class="table">
                         <div class="table_item">
                             <table>
