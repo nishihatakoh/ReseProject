@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
-use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
@@ -64,6 +62,8 @@ Route::prefix('owner')->group(function () {
     Route::get('/reserve', [OwnerReserveController::class, 'index'])->name('owner.reserve.index')->middleware(['owner']);
 });
 
+
+//公式ドキュメントを参照『メール認証』
 
 Route::get('/email/verify', function () {
     return view('auth.verify-email');
