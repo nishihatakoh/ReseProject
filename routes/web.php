@@ -6,6 +6,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\MypageController;
 use App\Http\Controllers\Shop_allController;
 use App\Http\Controllers\Shop_detailController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\DoneController;
 use App\Http\Controllers\ChangeController;
 use App\Http\Controllers\AdminLoginController;
@@ -37,6 +38,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/find', [Shop_allController::class, 'find'])->name('shop_all.find');
     Route::post('/shop_detail', [Shop_allController::class, 'detail'])->name('shop_all.detail');
     Route::post('/done',[Shop_detailController::class, 'reserve'])->name('shop_detail.reserve');
+    Route::post('/review',[ReviewController::class, 'index'])->name('review.index');
+    Route::post('/review/done',[ReviewController::class, 'review'])->name('review.review');
     Route::get('/done',[DoneController::class, 'index'])->name('done.index');
     Route::post('/mypage/change',[changeController::class, 'index'])->name('change.index');
     Route::post('/mypage/change/done',[changeController::class, 'change'])->name('change.change');
@@ -64,7 +67,6 @@ Route::prefix('owner')->group(function () {
 
 
 //公式ドキュメントを参照『メール認証』
-
 Route::get('/email/verify', function () {
     return view('auth.verify-email');
 })->middleware('auth')->name('verification.notice');

@@ -123,6 +123,7 @@ main {
     display: flex;
     margin:20px 0 ;
     align-items: center;
+    justify-content: space-between;
 }
 
 .card_button {
@@ -138,6 +139,17 @@ main {
 .card_ttl {
     font-size: 25px;
     padding:0 10px;
+    width: 50%;
+    
+}
+
+.review_button{
+    display:inline-block;
+    width: 50%;
+    margin: 0 0 0 auto;
+    border: none;
+    cursor: pointer;
+    color: #3333FF;
 }
 
 img {

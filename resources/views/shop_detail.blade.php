@@ -29,6 +29,11 @@
             <div class="card">
                 <div class="card_header">
                     <h2 class="card_ttl">{{$shop->shop_name}}</h2>
+                    <form action="{{ route('review.index')}}" method="post">
+                        @csrf
+                        <input type="hidden" name="id" value="{{ $shop->id }}">
+                        <input class="review_button"type="submit" value="レビューを見る&書き込む">
+                    </form>
                 </div>
                 <img src="{{$shop->image}}">
                 <div class="card_category">

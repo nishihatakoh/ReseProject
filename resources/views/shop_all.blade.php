@@ -58,8 +58,9 @@
                     <p>#{{$item->area->area_name}}</p>
                 </div>
                 <div class="card-bottom">
-                    <form action="{{ route('shop_all.detail', ['id' => $item->id]) }}" method="post">
+                    <form action="{{ route('shop_all.detail')}}" method="post">
                         @csrf
+                        <input type="hidden" name="id" value="{{ $item->id }}">
                         <button class="card-bottom_button">詳しく見る</button>
                     </form>
                     @if($favorite->favorite_exist(Auth::user()->id,$item->id))
