@@ -28,7 +28,7 @@
         <h2 class="shop_name">{{ $shop->shop_name }}のレビュー</h2>
         <div class="review_items">
             <p class="review_items_ttl">レビューを書き込む</p>
-            <form action="{{ route('review.review') }}" method="post">
+            <form action="{{ route('review.review') }}" enctype='multipart/form-data' method="post">
                 @csrf
                 <input type="hidden" name="shop_id" value="{{ $shop->id }}">
                 <table class="review_table">
