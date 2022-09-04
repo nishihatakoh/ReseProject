@@ -7,6 +7,8 @@ use App\Models\favorite;
 use App\Models\shop;
 use Illuminate\Support\Facades\Auth;
 use App\Models\reserve;
+use Stripe\Stripe;
+use Stripe\Charge;
 
 class MypageController extends Controller
 {
@@ -39,10 +41,36 @@ class MypageController extends Controller
     }
 
     public function logout(Request $request)
-{
-    Auth::logout();
-    $request->session()->invalidate();
-    $request->session()->regenerateToken();
-    return redirect()->route('login.index');
-}
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect()->route('login.index');
+    }
+
+    public function qrcode(Request $request)
+    {
+        $reserve = reserve::where('id', $request->id)->first();
+        return view('qrcode',compact('reserve'));
+    }
+
+    public function qrcodedetail ($id)
+    {
+
+
+        $reserve = reserve::where('id', $id)->first();
+        return view('qrcodedetail',compact('reserve'));
+    }
+
+    public function charge(Request $request)
+    {
+        Stripe::setApiKey(env('STRIPE_SECRET'));
+
+        $charge = Charge::create(array(
+            'amount' => 100,
+            'currency' => 'jpy',
+            'source'=> request()->stripeToken,
+        ));
+        return back();
+    }
 }

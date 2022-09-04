@@ -57,10 +57,30 @@
                                 </table>
                         </div>
                             <button class="reserve_button">予約変更はこちら</button>
+                            </form>
+                        <form action="{{ route('mypage.qrcode') }}" method="POST">
+                            <input type="hidden" name="id" value="{{ $reserve->id }}">
+                            @csrf
+                            <button class="qrcode">QRコードを取得する</button>
+                        </form>
+                        <form action="{{route('mypage.charge')}}" method="POST">
+                            @csrf
+                            <script
+                                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                                data-key="{{ env('STRIPE_KEY') }}"
+                                data-amount="1000"
+                                data-name="お支払い画面"
+                                data-label="payment"
+                                data-description="現在はデモ画面です"
+                                data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                                data-locale="auto"
+                                data-currency="JPY">
+                            </script>
                         </form>
                     </div>
                 </div>
             </div>
+            
             @endforeach
         </div>
         <div class="favorite">

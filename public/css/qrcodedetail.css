@@ -1,0 +1,28 @@
+main{
+    width: 100%;
+    text-align: center;
+}
+
+h2{
+    font-size: 30px;
+    margin: 30px 0;
+}
+
+.main{
+    width: 30%;
+    margin: 50px auto;
+    background-color: #3333FF;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px #AAA;
+    padding: 50px;
+}
+
+table{
+    color: white;
+    text-align: left;
+    width: 100%;
+}
+
+th{
+    padding: 10px;
+}

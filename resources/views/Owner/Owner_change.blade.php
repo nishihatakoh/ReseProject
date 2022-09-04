@@ -26,7 +26,7 @@
 <main>
     <div class="change">
         <h2 class="change_ttl">店舗情報変更</h2>
-        @foreach( $reserves as $reserve)
+        <!-- @foreach( $reserves as $reserve) -->
             <div class="change-item">
                 <div class="change_content">
                     <form action="" method="post">
@@ -84,6 +84,6 @@
                     </form>
                 </div>
             </div>
-        @endforeach
+        <!-- @endforeach -->
     </div>        
 </main>

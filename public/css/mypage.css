@@ -265,6 +265,19 @@ td {
     border: none;
     cursor: pointer;
 }
+
+.qrcode{
+    background-color:pink ;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    margin: 0 0 10px 0;
+    font-weight: 400;
+    font: 15px;
+    padding: 5px;
+
+}
+
 /* 　　　　　　お気に入り　　　　　 */
 
 .favorite{ 

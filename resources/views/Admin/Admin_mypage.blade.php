@@ -56,5 +56,5 @@
             </div>
         </div>
     </div>
-    
+    <a href="{{ route('admin.mail.index') }}">メール送信画面へ</a>
 </main>

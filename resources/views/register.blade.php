@@ -51,7 +51,7 @@
                     @if ($errors->has('password'))
                         <p class="error">{{$errors->first('password')}}</p>
                     @endif
-                    <input class="card_button" type="submit" value="登録">
+                    <input class="card_button" type="submit" value="仮登録">
                 </form>
             </div>
         </div>
