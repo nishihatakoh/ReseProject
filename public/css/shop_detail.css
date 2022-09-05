@@ -152,8 +152,9 @@ main {
     color: #3333FF;
 }
 
-img {
-    width: 100%;;
+.img {
+    width: 100%;
+
 }
 
 .card_category{

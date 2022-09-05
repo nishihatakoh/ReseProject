@@ -27,7 +27,10 @@ class OwnerCreateController extends Controller
         $genre_id = $request->genre_id;
         $text = $request->text;
         $owner_id = $request->owner_id;
-        $image = $request->image;
+        
+        $name=request()->file('image')->getClientOriginalName();
+        $file=request()->file('image')->move('storage/images/'.$owner_id ,$name);
+        $image = 'storage/images/'.$owner_id.'/'.$name;
 
         Shop::create([
             'shop_name' => $shop_name,
@@ -35,10 +38,10 @@ class OwnerCreateController extends Controller
             'genre_id' => $genre_id,
             'text' => $text,
             'owner_id' => $owner_id,
+            'image' => $image
         ]);
 
-        $name=request()->file('image')->getClientOriginalName();
-        $file=request()->file('image')->move('storage/images/'.$owner_id ,$name);
+        
 
         return view('Owner/Owner_mypage');
 

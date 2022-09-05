@@ -35,7 +35,7 @@
                         <input class="review_button"type="submit" value="レビューを見る&書き込む">
                     </form>
                 </div>
-                <img src="{{$shop->image}}">
+                <img class="img" src="{{ $shop->image }}">
                 <div class="card_category">
                     <p>#{{$shop->genre->genre_name}}</p>
                     <p>#{{$shop->area->area_name}}</p>

@@ -9,26 +9,49 @@ use App\Models\owner;
 use App\Models\areamaster;
 use App\Models\genremaster;
 use App\Models\shop;
+use App\Http\Requests\OwnerChangeRequest;
 
 
 class OwnerchangeController extends Controller
 {
     public function index(Request $request)
     {
-        $owner = Auth::guard('owners');
+        $owner = Auth::guard('owners')->id();
         $areamasters = areamaster::all();
         $genremasters = genremaster::all();
-        $shop = shop::where('owner_id', Auth::guard('owners')->id())->first();
+        $shops = shop::where('owner_id', $owner)->get();
         
         
-        if(is_null($shop)){
+        if(is_null($shops)){
             return view('Owner/owner_mypage');
         }else{
             
-            $reserves =reserve::where('shop_id',$shop->id)->get();
-        return view('Owner/owner_change', compact('owner', 'areamasters', 'genremasters','shop','reserves'));
+        return view('Owner/owner_change', compact('owner', 'areamasters', 'genremasters','shops',));
 
         }
 
+    }
+
+    public function change(OwnerChangeRequest $request)
+    {
+        $shop_name = $request->shop_name;
+        $area_id = $request->area_id;
+        $genre_id = $request->genre_id;
+        $text = $request->text;
+        $owner_id = $request->owner_id;
+        $name=request()->file('image')->getClientOriginalName();
+        $file=request()->file('image')->move('storage/images/'.$owner_id ,$name);
+        $image = 'storage/images/'.$owner_id.'/'.$name;
+
+        
+        shop::where('id', $request->id)->update([
+            'shop_name' => $shop_name,
+            'area_id' => $area_id,
+            'genre_id' => $genre_id,
+            'text' => $text,
+            'image' => $image
+        ]);
+
+        return view('Owner/Owner_mypage');
     }
 }

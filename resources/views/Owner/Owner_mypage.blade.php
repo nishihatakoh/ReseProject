@@ -7,9 +7,8 @@
     <div>
         <nav class="nav" id="nav">
             <ul>
-                <li><a href="{{ route('shop_all.index') }}">Home</a></li>
-                <li><a href="{{ route('register.index') }}">Registration</a></li>
-                <li><a href="{{ route('login.index') }}">Login</a></li>
+                <li><a href="{{ route('owner.mypage.index') }}">Home</a></li>
+                <li><a href="{{ route('owner.mypage.logout') }}">Logout</a></li>
             </ul>
         </nav>
     </div>
@@ -30,18 +29,18 @@
             <div class="content_items">
                 <div class="content_item">
                     <p>店舗新規作成→</p>
-                    <a href="{{ route('owner.create.index') }}">店舗新規作成ページへ</a>
+                    <a class="content_page" href="{{ route('owner.create.index') }}">店舗新規作成ページへ</a>
                     
                 </div>
                 <h3>↓新規作成した方のみ↓</h3>
                 <div class="content_item">
                     <p>店舗情報変更→</p>
-                    <a href="{{ route('owner.change.index') }}">店舗情報変更ページへ</a>
+                    <a class="content_page" href="{{ route('owner.change.index') }}">店舗情報変更ページへ</a>
                     
                 </div>
                 <div class="content_item">
                     <p>予約情報→</p>
-                    <a href="{{ route('owner.reserve.index') }}">予約情報ページへ</a>
+                    <a class="content_page" href="{{ route('owner.reserve.index') }}">予約情報ページへ</a>
                     
                 </div>
             </div>

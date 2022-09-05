@@ -28,7 +28,7 @@ class OwnerCreateRequest extends FormRequest
             'area_id' => 'required',
             'genre_id' => 'required',
             'text' => 'required|string',
-            'image' =>'required'
+            'image' =>'required|file|mimes:jpg,svg'
 
         ];
     }

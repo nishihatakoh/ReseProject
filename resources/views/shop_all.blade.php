@@ -49,8 +49,7 @@
         @foreach($items as $item)
         <div class="card">
             <div>
-                <!--  ↓↓↓↓以下のところが質問の箇所です↓↓↓↓   -->
-                <img class="card-img" src="{{ asset('storage/images/'.'$item->owner_id'.'/') }}">
+                <img class="card-img" src="{{ $item->image }}">
             </div>
             <div class="card-content">
                 <h2 class="card-name">{{$item->shop_name}}</h2>

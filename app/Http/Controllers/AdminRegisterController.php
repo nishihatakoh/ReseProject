@@ -6,6 +6,7 @@ use App\Models\Admin;
 use Illuminate\Http\Request;
 use App\Http\Requests\RegisterRequest;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Auth\Events\Registered;
 
 class AdminRegisterController extends Controller
 {
@@ -19,11 +20,13 @@ class AdminRegisterController extends Controller
         $user_name = $request->user_name;
         $email = $request->email;
         $password = $request->password;
-        Admin::create([
+        $admin = Admin::create([
             'user_name' => $user_name,
             'email' => $email,
             'password' => Hash::make($password)
         ]);
-        return view('Admin/Admin_login');
+
+        event(new Registered($admin));
+        return view('pre_register');
     }
 }

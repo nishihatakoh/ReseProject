@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 class Shop_detailController extends Controller
 {
     public function index(Request $request){
-        $shop = shop::where('id' , $request->id)-first();
+        $shop = shop::where('id' , $request->id)->first();
         return view('shop_ditail',compact('shop'));
     }
 

@@ -17,5 +17,11 @@ class OwnerMypageController extends Controller
         return view('Owner/owner_mypage');
     }
 
-    
+    public function logout(Request $request)
+    {
+        Auth::logout();
+    $request->session()->invalidate();
+    $request->session()->regenerateToken();
+    return redirect()->route('owner.login.index');
+    }
 }

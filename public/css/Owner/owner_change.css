@@ -128,7 +128,9 @@ main {
 /*                    変更　　　　　　　　　　　　　 */
 
 .change {
-    width: 40%;
+    width: 50%;
+    margin: 50px auto;
+    text-align: center;
 }
 
 .change_ttl {
@@ -141,14 +143,19 @@ main {
     background-color: #3333FF;
     border-radius: 5px;
     box-shadow: 3px 3px 3px #AAA;
+    
 }
 
 .change_content {
     padding: 20px;
 }
 
+
 .table_ttl {
     width: 30%;
+    color:White;
+    text-align: left;
+    padding: 10px 0;
 }
 
 .table_tr {
@@ -156,5 +163,18 @@ main {
 }
 
 .talbe_shop {
-    width: 40%;
+    width: 20%;
+    color: white;
+}
+
+.shop_input{
+    width: 50%;
+}
+
+.shop_input-item{
+    width: 100%;
+}
+
+.yajirushi{
+    color: white;
 }

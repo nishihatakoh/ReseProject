@@ -128,7 +128,7 @@ main {
 /*  　　　　　　　　　　　予約　　　　　　　　　　　　　 */
 
 .reserve {
-    width: 35%;
+    text-align: center;
 }
 
 .reserve_ttl {
@@ -140,11 +140,14 @@ main {
     background-color: #3333FF;
     border-radius: 5px;
     box-shadow: 3px 3px 3px #AAA;
+    width: 40%;
+        margin: 50px auto;
 }
 
 .reserve_content {
     margin: 20px;
     padding-top: 20px;
+    width: 100%
 }
 
 .reserve_title {
