@@ -26,3 +26,15 @@ table{
 th{
     padding: 10px;
 }
+
+@media screen and (max-width : 768px) {
+    .main {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width : 480px) {
+    .main {
+        width: 95%;
+    }
+}

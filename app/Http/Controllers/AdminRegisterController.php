@@ -25,8 +25,6 @@ class AdminRegisterController extends Controller
             'email' => $email,
             'password' => Hash::make($password)
         ]);
-
-        event(new Registered($admin));
-        return view('pre_register');
+        return view('admin/admin_login');
     }
 }

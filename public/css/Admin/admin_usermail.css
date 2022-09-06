@@ -159,3 +159,18 @@ textarea{
         border: none;
         cursor: pointer;
 }
+
+/*   レスポンシブデザイン   */
+
+
+@media screen and (max-width : 768px) {
+    .main {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width : 480px) {
+    .main {
+        width: 95%;
+    }
+}

@@ -180,3 +180,18 @@ button{
     border: none;
     cursor: pointer;
 }
+
+/*   レスポンシブデザイン   */
+
+
+@media screen and (max-width : 935px) {
+    .shop {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width : 480px) {
+    .shop {
+        width: 95%;
+    }
+}

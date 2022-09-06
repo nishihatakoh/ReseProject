@@ -29,3 +29,18 @@ main{
     padding: 10px 0;
     font-size: 20px;
 }
+
+/*   レスポンシブデザイン   */
+
+
+@media screen and (max-width : 768px) {
+    .container {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width : 480px) {
+    .container {
+        width: 95%;
+    }
+}

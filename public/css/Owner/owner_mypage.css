@@ -161,3 +161,18 @@ h3{
     border-radius: 5px;
     box-shadow: 3px 3px 3px black;
 }
+
+/*   レスポンシブデザイン   */
+
+
+@media screen and (max-width : 935px) {
+    main {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width : 480px) {
+    main {
+        width: 95%;
+    }
+}

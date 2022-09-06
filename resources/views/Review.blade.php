@@ -49,10 +49,6 @@
                         <th  class="review_table-ttl">コメント</th>
                         <td><textarea class="review_table-input" name="comment" cols="50" rows="5"></textarea></td>
                     </tr>
-                    <tr>
-                        <th class="review_table-ttl">画像</th>
-                        <td><input class="review_table-input" type="file" name="image"></td>
-                    </tr>
                 </table>
                 <button>書き込む</button>
             </form>

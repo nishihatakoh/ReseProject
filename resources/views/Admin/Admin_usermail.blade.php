@@ -34,7 +34,7 @@
                     <p>本文</p>
                     <textarea class="textarea" name="text" ></textarea>
                 </div>
-                <button class="button">メールを送信する</button>
+                <button class="button">メールを送信</button>
             </form>
         </div>
     </div>

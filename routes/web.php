@@ -82,6 +82,9 @@ Route::prefix('owner')->group(function () {
 });
 
 
+Route::get('/aaa', [mypageController::class, 'aaa']);
+
+
 //公式ドキュメントを参照『メール認証』
 Route::get('/email/verify', function () {
     return view('auth.verify-email');

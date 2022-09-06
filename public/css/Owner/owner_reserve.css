@@ -141,7 +141,7 @@ main {
     border-radius: 5px;
     box-shadow: 3px 3px 3px #AAA;
     width: 40%;
-        margin: 50px auto;
+    margin: 50px auto;
 }
 
 .reserve_content {
@@ -267,4 +267,19 @@ td {
     font-weight: 400;
     border: none;
     cursor: pointer;
+}
+
+/*   レスポンシブデザイン   */
+
+
+@media screen and (max-width : 768px) {
+    .reserve_item {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width : 480px) {
+    .reserve_item {
+        width: 95%;
+    }
 }

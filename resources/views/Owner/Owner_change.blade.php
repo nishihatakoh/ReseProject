@@ -89,7 +89,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <th class="table_ttl">店の画像URL</th>
+                                <th class="table_ttl">画像</th>
                                 <td class="talbe_shop"></td>
                                 <td class="yajirushi">→</td>
                                 <td><input class="review_table-input" type="file" name="image"></td>
