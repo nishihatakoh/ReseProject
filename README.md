@@ -1,2 +1,2 @@
-# ReseProject
+# Rese
 飲食店予約アプリ
