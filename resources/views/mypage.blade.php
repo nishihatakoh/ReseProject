@@ -99,8 +99,9 @@
                         </div>
                     
                         <div class="card-bottom">
-                            <form action="{{ route('mypage.detail', ['id' => $favorite->shop_id]) }}" method="post">
+                            <form action="{{ route('shop_all.detail') }}" method="post">
                                 @csrf
+                                <input type="hidden" name="id" value="{{ $favorite->shop_id }}">
                                 <button class="card-bottom_button">詳しく見る</button>
                             </form>
                             <form action="{{ route('mypage.unfavorite', ['id' => $favorite->id]) }}" method="post">

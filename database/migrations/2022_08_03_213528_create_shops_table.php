@@ -16,12 +16,12 @@ class CreateShopsTable extends Migration
         Schema::create('shops', function (Blueprint $table) {
             $table->id();
             $table->string('shop_name');
-            $table->integer('area_id');
-            $table->integer('genre_id');
+            $table->biginteger('area_id');
+            $table->biginteger('genre_id');
             $table->text('text');
             $table->string('image');
-            $table->integer('favorite')->nullable();
             $table->timestamps();
+            $table->biginteger('owner_id');
         });
     }
 

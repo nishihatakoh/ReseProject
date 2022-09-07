@@ -49,4 +49,6 @@
             </div>
         </div>
     </div>
+    <a class="loginpage" href="{{ route('admin.login.index') }}">管理者ログインページ</a>
+    <a href="{{ route('owner.login.index') }}">店舗代表者ログインページ</a>
 </main>

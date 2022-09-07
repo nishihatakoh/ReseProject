@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddOwnerIdToShopsTable extends Migration
+class CreateAreamastersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class AddOwnerIdToShopsTable extends Migration
      */
     public function up()
     {
-        Schema::table('shops', function (Blueprint $table) {
-            $table->integer('owner_id');
+        Schema::create('areamasters', function (Blueprint $table) {
+            $table->id();
+            $table->string('area_name');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +27,6 @@ class AddOwnerIdToShopsTable extends Migration
      */
     public function down()
     {
-        Schema::table('shops', function (Blueprint $table) {
-            
-        });
+        Schema::dropIfExists('areamasters');
     }
 }

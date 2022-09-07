@@ -30,7 +30,7 @@ class MypageController extends Controller
 
     public function detail(Request $request)
     {
-        $shop = shop::find($request->id);
+        $shop = shop::where('id' ,$request->id)->first();
         return view('shop_detail' , compact('shop'));
     }
 

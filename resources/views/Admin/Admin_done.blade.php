@@ -7,9 +7,8 @@
     <div>
         <nav class="nav" id="nav">
             <ul>
-                <li><a href="{{ route('shop_all.index') }}">Home</a></li>
-                <li><a href="{{ route('mypage.logout') }}">Logout</a></li>
-                <li><a href="{{ route('mypage.index') }}">Mypage</a></li>
+                <li><a href="{{ route('admin.login.logout') }}">logout</a></li>
+                <li><a href="{{ route('admin.mypage.index') }}">mypage</a></li>
             </ul>
         </nav>
     </div>

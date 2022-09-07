@@ -36,7 +36,6 @@ Route::get('/mypage/qrcode/detail/{id}', [MypageController::class, 'qrcodedetail
 Route::middleware(['auth'])->group(function () {
     Route::get('/mypage', [MypageController::class, 'index'])->name('mypage.index');
     Route::post('/delete', [MypageController::class, 'delete'])->name('mypage.delete');
-    Route::post('/mypage/detail', [MypageController::class, 'detail'])->name('mypage.detail');
     Route::post('/mypage/unfavorite', [MypageController::class, 'unfavorite'])->name('mypage.unfavorite');
     Route::post('/mypage/qrcode', [MypageController::class, 'qrcode'])->name('mypage.qrcode'); 
     Route::post('/mypage/charge', [MypageController::class, 'charge'])->name('mypage.charge');
