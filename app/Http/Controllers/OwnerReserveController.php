@@ -14,11 +14,11 @@ class OwnerReserveController extends Controller
         $shop = shop::where('owner_id', Auth::guard('owners')->id())->first();
 
         if(is_null($shop)){
-            return view('owner/owner_mypage');
+            return view('Owner/Owner_mypage');
         }else{
         $reserves =reserve::where('shop_id',$shop->id)->get();
 
-        return view('Owner/owner_reserve', compact('shop','reserves'));
+        return view('Owner/Owner_reserve', compact('shop','reserves'));
         }
     }
 }
