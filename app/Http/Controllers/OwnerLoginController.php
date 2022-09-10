@@ -11,7 +11,7 @@ class OwnerLoginController extends Controller
 {
     public function index()
     {
-        return view('Owner/owner_login');
+        return view('Owner/Owner_login');
     }
 
     public function login(OwnerLoginRequest $request)
