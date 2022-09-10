@@ -11,7 +11,7 @@ use App\Models\owner;
 class AdminMypageController extends Controller
 {
     public function index(){
-        return view('Admin/admin_mypage');
+        return view('Admin/Admin_mypage');
     }
 
     //店舗代表者新規登録アクション
