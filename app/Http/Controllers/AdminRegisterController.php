@@ -25,6 +25,6 @@ class AdminRegisterController extends Controller
             'email' => $email,
             'password' => Hash::make($password)
         ]);
-        return view('admin/admin_login');
+        return view('Admin/Admin_login');
     }
 }
