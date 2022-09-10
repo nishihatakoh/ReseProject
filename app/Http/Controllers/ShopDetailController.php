@@ -9,7 +9,7 @@ use App\Models\user;
 use App\Models\reserve;
 use Illuminate\Support\Facades\Auth;
 
-class Shop_detailController extends Controller
+class ShopDetailController extends Controller
 {
     public function index(Request $request){
         $shop = shop::where('id' , $request->id)->first();

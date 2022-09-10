@@ -9,7 +9,7 @@ use App\Models\areamaster;
 use App\Models\genremaster;
 use Illuminate\Support\Facades\Auth;
 
-class Shop_allController extends Controller
+class ShopAllController extends Controller
 {
     public function index(Request $request)
     {

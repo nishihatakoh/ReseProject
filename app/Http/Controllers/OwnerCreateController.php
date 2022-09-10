@@ -28,9 +28,11 @@ class OwnerCreateController extends Controller
         $text = $request->text;
         $owner_id = $request->owner_id;
         
-        $name=request()->file('image')->getClientOriginalName();
-        $file=request()->file('image')->move('storage/images/'.$owner_id ,$name);
-        $image = 'storage/images/'.$owner_id.'/'.$name;
+
+        $image = base64_encode(file_get_contents($request->image->getRealPath()));
+        // $name=request()->file('image')->getClientOriginalName();
+        // $file=request()->file('image')->move('storage/images/'.$owner_id ,$name);
+        // $image = 'storage/images/'.$owner_id.'/'.$name;
 
         Shop::create([
             'shop_name' => $shop_name,
