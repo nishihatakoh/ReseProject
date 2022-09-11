@@ -50,6 +50,7 @@
         <div class="card">
             <div>
                 <img class="card-img" src="data:image/png;base64,<?= $item->image ?>">
+                <!--  ↓ストレージの画像を表示するとき↓   -->
                 <!-- <img class="card-img" src="{{ $item->image }}"> -->
             </div>
             <div class="card-content">

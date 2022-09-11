@@ -89,6 +89,7 @@
                 @foreach($favorites as $favorite)
                 <div class="card_item">
                     <div>
+                        <img class="card-img" src="data:image/png;base64,<?= $favorite->shop->image ?>">
                         <img class="card-img" src="{{ $favorite->shop->image }}">
                     </div>
                     <div class="card-content">

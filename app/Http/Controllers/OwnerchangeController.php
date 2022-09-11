@@ -32,7 +32,7 @@ class OwnerchangeController extends Controller
 
     }
 
-    public function change(Request $request)
+    public function change(OwnerChangeRequest $request)
     {
         $shop_name = $request->shop_name;
         $area_id = $request->area_id;
@@ -41,7 +41,8 @@ class OwnerchangeController extends Controller
         $owner_id = $request->owner_id;
 
         
-        $image = base64_encode(file_get_contents($request->image->getRealPath()));
+        $image_binary = base64_encode(file_get_contents($request->image->getRealPath()));
+        //　ローカル環境でのストレージへの保存コード
         // $name=request()->file('image')->getClientOriginalName();
         // $file=request()->file('image')->move('storage/images/'.$owner_id ,$name);
         // $image = 'storage/images/'.$owner_id.'/'.$name
@@ -51,7 +52,7 @@ class OwnerchangeController extends Controller
             'area_id' => $area_id,
             'genre_id' => $genre_id,
             'text' => $text,
-            'image' => $image
+            'image' => $image_binary
         ]);
 
         return view('Owner/Owner_mypage');
