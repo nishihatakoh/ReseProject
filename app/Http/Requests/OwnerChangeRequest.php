@@ -27,7 +27,7 @@ class OwnerChangeRequest extends FormRequest
             'shop_name' => 'required|string|max:191',
             'area_id' => 'required',
             'genre_id' => 'required',
-            'text' => 'required|string',
+            'text' => 'required|string'
         ];
     }
 }

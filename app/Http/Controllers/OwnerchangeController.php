@@ -39,12 +39,13 @@ class OwnerchangeController extends Controller
         $genre_id = $request->genre_id;
         $text = $request->text;
         $owner_id = $request->owner_id;
-        
+
+        if(is_file('image')){
         $image_binary = base64_encode(file_get_contents($request->image->getRealPath()));
         // $name=request()->file('image')->getClientOriginalName();
         // $file=request()->file('image')->move('storage/images/'.$owner_id ,$name);
         // $image = 'storage/images/'.$owner_id.'/'.$name;
-
+        }
         
         shop::where('id', $request->id)->update([
             'shop_name' => $shop_name,
