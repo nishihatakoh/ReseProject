@@ -73,9 +73,4 @@ class MypageController extends Controller
         ));
         return back();
     }
-
-    public function aaa()
-    {
-        return view('owner/owner_create');
-    }
 }

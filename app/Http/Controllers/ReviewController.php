@@ -31,7 +31,6 @@ class ReviewController extends Controller
             'star' => $star,
             'comment' => $comment,
         ]);
-
         return redirect('/');
     }
 }
