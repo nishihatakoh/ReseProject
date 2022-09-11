@@ -28,8 +28,7 @@ class OwnerCreateController extends Controller
         $text = $request->text;
         $owner_id = $request->owner_id;
         
-
-        $image = base64_encode(file_get_contents($request->image->getRealPath()));
+        $image = base64_encode(file_get_contents($request->image));
         // $name=request()->file('image')->getClientOriginalName();
         // $file=request()->file('image')->move('storage/images/'.$owner_id ,$name);
         // $image = 'storage/images/'.$owner_id.'/'.$name;
