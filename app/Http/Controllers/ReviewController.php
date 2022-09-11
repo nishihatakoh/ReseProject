@@ -25,26 +25,12 @@ class ReviewController extends Controller
         $star = $request->star;
         $comment = $request->comment;
 
-        
-
-        if(request('image')){
-            $name=request()->file('image')->getClientOriginalName();
-            $file=request()->file('image')->move('storage/images',$name);
-            Review::create([
-                'user_id' => $user_id,
-                'shop_id' => $shop_id,
-                'star' => $star,
-                'comment' => $comment,
-                'image' =>$name
-            ]);
-        }else{
-            Review::create([
-                'user_id' => $user_id,
-                'shop_id' => $shop_id,
-                'star' => $star,
-                'comment' => $comment,
-            ]);
-        }
+        Review::create([
+            'user_id' => $user_id,
+            'shop_id' => $shop_id,
+            'star' => $star,
+            'comment' => $comment,
+        ]);
 
         return redirect('/');
     }
