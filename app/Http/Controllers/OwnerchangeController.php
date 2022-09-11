@@ -39,6 +39,7 @@ class OwnerchangeController extends Controller
         $genre_id = $request->genre_id;
         $text = $request->text;
         $owner_id = $request->owner_id;
+        
         $image_binary = base64_encode(file_get_contents($request->image->getRealPath()));
         // $name=request()->file('image')->getClientOriginalName();
         // $file=request()->file('image')->move('storage/images/'.$owner_id ,$name);

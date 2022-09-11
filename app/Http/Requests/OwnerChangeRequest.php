@@ -28,7 +28,7 @@ class OwnerChangeRequest extends FormRequest
             'area_id' => 'required',
             'genre_id' => 'required',
             'text' => 'required|string',
-            'image' =>'required|file|mimes:jpg,svg'
+            'image' =>'required|mimes:jpg,svg'
         ];
     }
 }
