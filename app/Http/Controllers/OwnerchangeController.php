@@ -41,7 +41,7 @@ class OwnerchangeController extends Controller
         $owner_id = $request->owner_id;
 
         if(is_file('image')){
-        $image_binary = base64_encode(file_get_contents($request->image->getRealPath()));
+        $image = base64_encode(file_get_contents($request->image->getRealPath()));
         // $name=request()->file('image')->getClientOriginalName();
         // $file=request()->file('image')->move('storage/images/'.$owner_id ,$name);
         // $image = 'storage/images/'.$owner_id.'/'.$name;
@@ -52,7 +52,7 @@ class OwnerchangeController extends Controller
             'area_id' => $area_id,
             'genre_id' => $genre_id,
             'text' => $text,
-            'image' => $image_binary
+            'image' => $image
         ]);
 
         return view('Owner/Owner_mypage');
