@@ -50,7 +50,7 @@ class OwnerchangeController extends Controller
             'area_id' => $area_id,
             'genre_id' => $genre_id,
             'text' => $text,
-            'image' => $image
+            'image' => $image_binary
         ]);
 
         return view('Owner/Owner_mypage');
