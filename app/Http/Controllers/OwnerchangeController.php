@@ -32,7 +32,7 @@ class OwnerchangeController extends Controller
 
     }
 
-    public function change(OwnerChangeRequest $request)
+    public function change(Request $request)
     {
         $shop_name = $request->shop_name;
         $area_id = $request->area_id;
