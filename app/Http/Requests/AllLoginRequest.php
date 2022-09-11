@@ -24,7 +24,7 @@ class AllLoginRequest extends FormRequest
     public function rules()
     {
         return [
-            'email' => 'required|email|unique:users,email|max:191',
+            'email' => 'required|email|max:191',
             'password' => 'required|min:8|max:191'
         ];
     }
