@@ -49,7 +49,8 @@
         @foreach($items as $item)
         <div class="card">
             <div>
-                <img src="data:image/png;base64,<?= $item->image ?>">
+                <img class="card-img" src="data:image/png;base64,<?= $item->image ?>">
+                <img class="card-img" src="{{ $item->image }}">
             </div>
             <div class="card-content">
                 <h2 class="card-name">{{$item->shop_name}}</h2>
