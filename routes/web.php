@@ -72,16 +72,13 @@ Route::prefix('owner')->group(function () {
     Route::get('login', [OwnerLoginController::class, 'index'])->name('owner.login.index');
     Route::post('login', [OwnerLoginController::class, 'login'])->name('owner.login.login');
     Route::get('logout', [OwnerMypageController::class, 'logout'])->name('owner.mypage.logout')->middleware(['owner']);
-    Route::get('/', [OwnerMypageController::class, 'index'])->name('owner.mypage.index');
+    Route::get('/', [OwnerMypageController::class, 'index'])->name('owner.mypage.index')->middleware(['owner']);
     Route::get('/create', [OwnerCreateController::class, 'index'])->name('owner.create.index')->middleware(['owner']);
     Route::post('/create/done', [OwnerCreateController::class, 'create'])->name('owner.create.create')->middleware(['owner']);
     Route::get('/change', [OwnerchangeController::class, 'index'])->name('owner.change.index')->middleware(['owner']);
     Route::post('/change/done', [OwnerchangeController::class, 'change'])->name('owner.change.change')->middleware(['owner']);
     Route::get('/reserve', [OwnerReserveController::class, 'index'])->name('owner.reserve.index')->middleware(['owner']);
 });
-
-
-Route::get('/aaa', [mypageController::class, 'aaa']);
 
 
 //公式ドキュメントを参照『メール認証』
