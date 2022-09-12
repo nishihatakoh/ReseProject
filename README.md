@@ -26,13 +26,14 @@ https://calm-basin-07348.herokuapp.com/
 - 店舗作成、変更機能
 
 ## 使用技術(実装環境)
-HTML
-CSS
-Javascript
-PHP 8.1.6
-Laravel Framework 8.83.23
-MySQL  5.7.34 
+- HTML
+- CSS
+- Javascript
+- PHP 8.1.6
+- Laravel Framework 8.83.23
+- MySQL  5.7.34 
 
 ## ER図
-![Rese](https://user-images.githubusercontent.com/103934454/189643309-2c4d7601-6cd3-4713-bcbc-d356cbb05719.svg)
+![Rese drawio](https://user-images.githubusercontent.com/103934454/189643921-5e8a10ed-9863-4cce-9f8f-fa2d4e70df16.png)
+
 
