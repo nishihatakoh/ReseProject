@@ -11,10 +11,8 @@ https://calm-basin-07348.herokuapp.com/
 
 ログイン
 
-メールアドレス：a@a
-
+メールアドレス：aaa@aaa
 パスワード：aaaaaaaa（aが8個）
-
 にてテストログインができます。
 
 
