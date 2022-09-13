@@ -14,7 +14,7 @@ class AdminMypageController extends Controller
         return view('Admin/admin_mypage');
     }
 
-    //店舗代表者新規登録アクション
+    //店舗代表者新規登録のアクション
     public function create(AdminMypageRequest $request)
     {
         $owner_name = $request->owner_name;
