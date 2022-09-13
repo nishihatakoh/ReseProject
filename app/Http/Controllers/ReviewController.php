@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\shop;
+use App\Models\Shop;
 use Illuminate\Support\Facades\Auth;
-use App\Models\review;
+use App\Models\Review;
 
 use Illuminate\Http\Request;
 

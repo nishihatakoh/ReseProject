@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\shop;
-use App\Models\favorite;
-use App\Models\areamaster;
-use App\Models\genremaster;
+use App\Models\Shop;
+use App\Models\Favorite;
+use App\Models\Area;
+use App\Models\Genre;
 use Illuminate\Support\Facades\Auth;
 
 class ShopAllController extends Controller
@@ -14,9 +14,9 @@ class ShopAllController extends Controller
     public function index(Request $request)
     {
         $items = shop::with('genre')->with('area')->get();
-        $areamasters = areamaster::all();
-        $genremasters = genremaster::all();
-        $favorite = favorite::all()->first();
+        $areamasters = Area::all();
+        $genremasters = Genre::all();
+        $favorite = Favorite::all()->first();
         return view('shop_all' , compact('items','areamasters', 'genremasters','favorite'));
     }
 
@@ -39,9 +39,9 @@ class ShopAllController extends Controller
         }
 
         $items = $query->get();
-        $areamasters = areamaster::all();
-        $genremasters = genremaster::all();
-        $favorite = favorite::all()->first();
+        $areamasters = Area::all();
+        $genremasters = Genre::all();
+        $favorite = Favorite::all()->first();
 
         return view('shop_all', compact('items', 'shop_name', 'area_id', 'genre_id','areamasters', 'genremasters','favorite'));
     }
@@ -56,13 +56,13 @@ class ShopAllController extends Controller
     {
         $id = Auth::user()->id;
         $shop_id = $request->shop_id;
-        $favorite = new favorite;
-        $shop = shop::findOrFail($shop_id);
+        $favorite = new Favorite;
+        $shop = Shop::findOrFail($shop_id);
 
         if ($favorite->favorite_exist($id, $shop_id)) {
-            $favorite = favorite::where('shop_id', $shop_id)->where('user_id', $id)->delete();
+            $favorite = Favorite::where('shop_id', $shop_id)->where('user_id', $id)->delete();
         } else {
-            $favorite = new favorite;
+            $favorite = new Favorite;
             $favorite->shop_id = $request->shop_id;
             $favorite->user_id = Auth::user()->id;
             $favorite->save();

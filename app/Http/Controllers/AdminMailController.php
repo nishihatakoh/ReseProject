@@ -11,20 +11,20 @@ class AdminMailController extends Controller
 {
     public function index()
     {
-        $users = user::all();
+        $users = User::all();
         return view('Admin/Admin_allmail',compact('users'));
     }
 
     public function send(Request $request)
     {
-        $user = user::where('id',$request->id)->first();
+        $user = User::where('id',$request->id)->first();
         return view('Admin/Admin_usermail',compact('user'));
     }
 
     public function sendmail(Request $request)
     {
         
-        $toUser = user::where('id',$request->id)->first();
+        $toUser = User::where('id',$request->id)->first();
         $text = $request->text;
         $username = $request->user_name;
         

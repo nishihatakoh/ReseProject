@@ -45,6 +45,6 @@ class Owner extends Authenticatable
     ];
 
     public function shop(){
-        return $this->hasOne('App\Models\shop');
+        return $this->hasOne('App\Models\Shop');
     }
 }

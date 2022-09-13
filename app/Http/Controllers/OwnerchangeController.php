@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\reserve;
-use App\Models\owner;
-use App\Models\areamaster;
-use App\Models\genremaster;
-use App\Models\shop;
+use App\Models\Reserve;
+use App\Models\Owner;
+use App\Models\Area;
+use App\Models\Genre;
+use App\Models\Shop;
 use App\Http\Requests\OwnerChangeRequest;
 
 
@@ -17,9 +17,9 @@ class OwnerchangeController extends Controller
     public function index(Request $request)
     {
         $owner = Auth::guard('owners')->id();
-        $areamasters = areamaster::all();
-        $genremasters = genremaster::all();
-        $shops = shop::where('owner_id', $owner)->get();
+        $areamasters = Area::all();
+        $genremasters = Genre::all();
+        $shops = Shop::where('owner_id', $owner)->get();
         
         
         if(is_null($shops)){
@@ -42,12 +42,13 @@ class OwnerchangeController extends Controller
 
         
         $image_binary = base64_encode(file_get_contents($request->image->getRealPath()));
-        //　ローカル環境でのストレージへの保存コード
-        // $name=request()->file('image')->getClientOriginalName();
-        // $file=request()->file('image')->move('storage/images/'.$owner_id ,$name);
-        // $image = 'storage/images/'.$owner_id.'/'.$name
         
-        shop::where('id', $request->id)->update([
+        $name=request()->file('image')->getClientOriginalName();
+        $file=request()->file('image')->move('storage/images/'.$owner_id ,$name);
+        // ローカル環境で保存する際には以下のコードでMTSQLのDBに保存します。
+        // $image = 'storage/images/'.$owner_id.'/'.$name;
+        
+        Shop::where('id', $request->id)->update([
             'shop_name' => $shop_name,
             'area_id' => $area_id,
             'genre_id' => $genre_id,

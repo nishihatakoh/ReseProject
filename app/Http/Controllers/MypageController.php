@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\favorite;
-use App\Models\shop;
+use App\Models\Favorite;
+use App\Models\Shop;
 use Illuminate\Support\Facades\Auth;
-use App\Models\reserve;
+use App\Models\Reserve;
 use Stripe\Stripe;
 use Stripe\Charge;
 
@@ -16,7 +16,7 @@ class MypageController extends Controller
     {
         $user = Auth::user();
         $reserves = Reserve::where('user_id', Auth::id())->get();
-        $favorites = favorite::where('user_id', Auth::id())->get();
+        $favorites = Favorite::where('user_id', Auth::id())->get();
         return view('mypage' , compact('reserves' , 'user','favorites'));
     }
 
@@ -24,19 +24,19 @@ class MypageController extends Controller
 
     public function delete(Request $request)
     {
-        reserve::find($request->id)->delete();
+        Reserve::find($request->id)->delete();
         return redirect('/mypage');
     }
 
     public function detail(Request $request)
     {
-        $shop = shop::where('id' ,$request->id)->first();
+        $shop = Shop::where('id' ,$request->id)->first();
         return view('shop_detail' , compact('shop'));
     }
 
     public function unfavorite(Request $request)
     {
-        favorite::find($request->id)->delete();
+        Favorite::find($request->id)->delete();
         return back();
     }
 
@@ -50,7 +50,7 @@ class MypageController extends Controller
 
     public function qrcode(Request $request)
     {
-        $reserve = reserve::where('id', $request->id)->first();
+        $reserve = Reserve::where('id', $request->id)->first();
         return view('qrcode',compact('reserve'));
     }
 
@@ -58,7 +58,7 @@ class MypageController extends Controller
     {
 
 
-        $reserve = reserve::where('id', $id)->first();
+        $reserve = Reserve::where('id', $id)->first();
         return view('qrcodedetail',compact('reserve'));
     }
 

@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class areamaster extends Model
+class Genre extends Model
 {
     use HasFactory;
 
-    protected $fillable =['area_name'];
+    protected $fillable =['genre_name'];
 
-    public function area(){
-        return $this->hasMany('App\Models\shop');
+    public function genre(){
+        return $this->hasMany('App\Models\Shop');
     }
 }

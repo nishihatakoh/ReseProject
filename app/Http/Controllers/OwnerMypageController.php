@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\reserve;
+use App\Models\Reserve;
 use App\Models\owner;
-use App\Models\areamaster;
-use App\Models\genremaster;
-use App\Models\shop;
+use App\Models\Area;
+use App\Models\Genre;
+use App\Models\Shop;
 
 class OwnerMypageController extends Controller
 {

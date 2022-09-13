@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\reserve;
-use App\Models\shop;
+use App\Models\Reserve;
+use App\Models\Shop;
 use Illuminate\Support\Facades\Auth;
 
 class ChangeController extends Controller
@@ -12,7 +12,7 @@ class ChangeController extends Controller
     public function index (Request $request)
     {
         $id = $request->id;
-        $reserve = reserve::with('shop')->where('id', '=', $id)->first();
+        $reserve = Reserve::with('shop')->where('id', '=', $id)->first();
         return view('change',compact('reserve'));
     }
 
@@ -20,7 +20,7 @@ class ChangeController extends Controller
     {
         $form=$request->all();
         unset($form['_token']);
-        reserve::where('id', $request->id)->update($form);
+        Reserve::where('id', $request->id)->update($form);
         return redirect('mypage');
     }
 }

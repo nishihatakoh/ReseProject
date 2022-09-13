@@ -4,18 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\OwnerCreateRequest;
-use App\Models\areamaster;
-use App\Models\genremaster;
+use App\Models\Area;
+use App\Models\Genre;
 use Illuminate\Support\Facades\Auth;
-use App\Models\shop;
+use App\Models\Shop;
 
 class OwnerCreateController extends Controller
 {
     public function index(Request $request)
     {
         $owner = Auth::guard('owners')->id();
-        $areamasters = areamaster::all();
-        $genremasters = genremaster::all();
+        $areamasters = Area::all();
+        $genremasters = Genre::all();
 
         return view('Owner/Owner_create', compact('owner', 'areamasters', 'genremasters'));
     }
@@ -32,6 +32,7 @@ class OwnerCreateController extends Controller
         
         $name=request()->file('image')->getClientOriginalName();
         $file=request()->file('image')->move('storage/images/'.$owner_id ,$name);
+        // ローカル環境で保存する際には以下のコードでMTSQLのDBに保存します。
         // $image = 'storage/images/'.$owner_id.'/'.$name;
 
         Shop::create([

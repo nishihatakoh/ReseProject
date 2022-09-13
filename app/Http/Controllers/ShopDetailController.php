@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\ReserveRequest;
-use App\Models\shop;
-use App\Models\user;
-use App\Models\reserve;
+use App\Models\Shop;
+use App\Models\User;
+use App\Models\Reserve;
 use Illuminate\Support\Facades\Auth;
 
 class ShopDetailController extends Controller

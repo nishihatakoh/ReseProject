@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\AdminMypageRequest;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
-use App\Models\owner;
+use App\Models\Owner;
 
 class AdminMypageController extends Controller
 {
