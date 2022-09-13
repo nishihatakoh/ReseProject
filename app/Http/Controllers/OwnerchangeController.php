@@ -23,10 +23,10 @@ class OwnerchangeController extends Controller
         
         
         if(is_null($shops)){
-            return view('Owner/Owner_mypage');
+            return view('Owner/owner_mypage');
         }else{
             
-        return view('Owner/Owner_change', compact('owner', 'areamasters', 'genremasters','shops',));
+        return view('Owner/owner_change', compact('owner', 'areamasters', 'genremasters','shops',));
 
         }
 
@@ -56,6 +56,6 @@ class OwnerchangeController extends Controller
             'image' => $image_binary
         ]);
 
-        return view('Owner/Owner_mypage');
+        return view('Owner/owner_mypage');
     }
 }

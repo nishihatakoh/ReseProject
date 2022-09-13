@@ -14,7 +14,7 @@ class OwnerMypageController extends Controller
 {
     public function index (Request $request)
     {
-        return view('Owner/Owner_mypage');
+        return view('Owner/owner_mypage');
     }
 
     public function logout(Request $request)

@@ -12,13 +12,13 @@ class AdminMailController extends Controller
     public function index()
     {
         $users = User::all();
-        return view('Admin/Admin_allmail',compact('users'));
+        return view('Admin/admin_allmail',compact('users'));
     }
 
     public function send(Request $request)
     {
         $user = User::where('id',$request->id)->first();
-        return view('Admin/Admin_usermail',compact('user'));
+        return view('Admin/admin_usermail',compact('user'));
     }
 
     public function sendmail(Request $request)
@@ -32,6 +32,6 @@ class AdminMailController extends Controller
 
         Mail::to($toUser->email)->send(new AdminMail($text,$username));
 
-        return view('Admin/Admin_mypage');
+        return view('Admin/admin_mypage');
     }
 }

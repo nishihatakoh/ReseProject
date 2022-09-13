@@ -11,7 +11,7 @@ use App\Models\Owner;
 class AdminMypageController extends Controller
 {
     public function index(){
-        return view('Admin/Admin_mypage');
+        return view('Admin/admin_mypage');
     }
 
     //店舗代表者新規登録アクション
@@ -25,7 +25,7 @@ class AdminMypageController extends Controller
             'email' => $email,
             'password' => Hash::make($password)
         ]);
-        return view('Admin/Admin_done');
+        return view('Admin/admin_done');
     }
 
 

@@ -11,7 +11,7 @@ class AdminLoginController extends Controller
 {
     public function index()
     {
-        return view('Admin/Admin_login');
+        return view('Admin/admin_login');
     }
 
     public function login(AllLoginRequest $request)

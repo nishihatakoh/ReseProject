@@ -12,7 +12,7 @@ class AdminRegisterController extends Controller
 {
     public function index()
     {
-        return view('Admin/Admin_register');
+        return view('Admin/admin_register');
     }
     
     public function register(RegisterRequest $request)
@@ -25,6 +25,6 @@ class AdminRegisterController extends Controller
             'email' => $email,
             'password' => Hash::make($password)
         ]);
-        return view('Admin/Admin_login');
+        return view('Admin/admin_login');
     }
 }

@@ -17,7 +17,7 @@ class OwnerCreateController extends Controller
         $areamasters = Area::all();
         $genremasters = Genre::all();
 
-        return view('Owner/Owner_create', compact('owner', 'areamasters', 'genremasters'));
+        return view('Owner/owner_create', compact('owner', 'areamasters', 'genremasters'));
     }
 
     public function create(OwnerCreateRequest $request)
@@ -46,7 +46,7 @@ class OwnerCreateController extends Controller
 
         
 
-        return view('Owner/Owner_mypage');
+        return view('Owner/owner_mypage');
 
     }
 }
