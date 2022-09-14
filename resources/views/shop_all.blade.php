@@ -61,11 +61,7 @@
                     <p>#{{$item->area->area_name}}</p>
                 </div>
                 <div class="card-bottom">
-                    <form action="{{ route('shop_all.detail')}}" method="post">
-                        @csrf
-                        <input type="hidden" name="id" value="{{ $item->id }}">
-                        <button class="card-bottom_button">詳しく見る</button>
-                    </form>
+                    <a class="card-bottom_button" href="{{ route('shop_all.detail', ['id' => $item->id]) }}">詳しくみる</a>
                     @if($favorite->favorite_exist(Auth::user()->id,$item->id))
                         <form action="{{ route('shop_all.favorite', ['shop_id' => $item->id]) }}" method="post">
                             @csrf

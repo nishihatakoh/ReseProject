@@ -11,8 +11,8 @@ use Illuminate\Support\Facades\Auth;
 
 class ShopDetailController extends Controller
 {
-    public function index(Request $request){
-        $shop = shop::where('id' , $request->id)->first();
+    public function index($id){
+        $shop = shop::where('id',$id)->first();
         return view('shop_ditail',compact('shop'));
     }
 

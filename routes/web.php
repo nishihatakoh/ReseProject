@@ -43,11 +43,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/', [ShopAllController::class, 'index'])->name('shop_all.index');
     Route::post('/favorite', [ShopAllController::class, 'favorite'])->name('shop_all.favorite');   
     Route::post('/find', [ShopAllController::class, 'find'])->name('shop_all.find');
-    Route::post('/shop_detail', [ShopAllController::class, 'detail'])->name('shop_all.detail');
+    Route::get('/shop_detail/{id}', [ShopAllController::class, 'detail'])->name('shop_all.detail');
     Route::post('/shop_detail/done',[ShopDetailController::class, 'reserve'])->name('shop_detail.reserve');
     Route::post('/review',[ReviewController::class, 'index'])->name('review.index');
     Route::post('/review/done',[ReviewController::class, 'review'])->name('review.review');
-    Route::post('/mypage/change',[ChangeController::class, 'index'])->name('change.index');
+    Route::get('/mypage/change/{id}',[ChangeController::class, 'index'])->name('change.index');
     Route::post('/mypage/change/done',[ChangeController::class, 'change'])->name('change.change');
 });
 

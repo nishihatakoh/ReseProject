@@ -26,7 +26,7 @@
 <main>
     <div>
         <h2>予約変更</h2>
-        <form action="{{ route('change.change', ['id' => $reserve->id]) }}" method="post">
+        <form action="{{ route('change.change')}}" method="post">
             @csrf
             <div class="card">
                 <div class="table_item">
@@ -56,6 +56,7 @@
                             <td>→</td>
                             <td class="input">
                                 <select name="time" id="time" class="input_item">
+                                    <option value=""></option>
                                     @for($i = 16; $i < 24; $i++)
                                         <option value="{{$i}}:00">{{$i}}:00</option>  
                                         <option value="{{$i}}:30">{{$i}}:30</option>  
@@ -69,6 +70,7 @@
                             <td>→</td>
                             <td class="input">
                                 <select name="number" id="number" class="input_item">
+                                    <option value=""></option>
                                     @for($i = 1; $i <= 10; $i++)
                                         <option value="{{$i}}">{{$i}}人</option>  
                                     @endfor

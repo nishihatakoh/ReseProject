@@ -41,7 +41,7 @@
                     </div>
                     <div class="table">
                         <div class="table_item">
-                            <form action="{{ route('change.index', ['id' => $reserve->id]) }}" method="post">
+                            
                                 @csrf
                                 <table>
                                     <tr>
@@ -52,12 +52,18 @@
                                         <th>Date</th>
                                         <td>{{ $reserve->date }}</td>
                                     </tr>
-                                    <tr><th>Time</th><td>{{ $reserve->time }}</td></tr>
-                                    <tr><th>Number</th><td>{{ $reserve->number }}人</td></tr>
+                                    <tr>
+                                        <th>Time</th>
+                                        <td>{{ $reserve->time }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Number</th>
+                                        <td>{{ $reserve->number }}人</td>
+                                    </tr>
                                 </table>
                         </div>
-                            <button class="reserve_button">予約変更はこちら</button>
-                            </form>
+                            <a class="reserve_button" href="{{ route('change.index', ['id' => $reserve->id]) }}">予約変更</a>
+                        
                         <form action="{{ route('mypage.qrcode') }}" method="POST">
                             <input type="hidden" name="id" value="{{ $reserve->id }}">
                             @csrf
@@ -102,10 +108,7 @@
                         </div>
                     
                         <div class="card-bottom">
-                            <form action="{{ route('shop_all.detail') }}" method="post">
-                                @csrf
-                                <input type="hidden" name="id" value="{{ $favorite->shop_id }}">
-                                <button class="card-bottom_button">詳しく見る</button>
+                                <a class="card-bottom_button" href="{{ route('shop_all.detail', ['id' => $favorite->shop->id]) }}">詳しくみる</a>
                             </form>
                             <form action="{{ route('mypage.unfavorite', ['id' => $favorite->id]) }}" method="post">
                             @csrf

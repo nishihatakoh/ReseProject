@@ -10,10 +10,9 @@ use App\Http\Requests\ReserveRequest;
 
 class ChangeController extends Controller
 {
-    public function index (Request $request)
+    public function index ($id)
     {
-        $id = $request->id;
-        $reserve = Reserve::with('shop')->where('id', '=', $id)->first();
+        $reserve = Reserve::with('shop')->where('id', $id)->where('user_id', Auth::id())->first();
         return view('change',compact('reserve'));
     }
 
