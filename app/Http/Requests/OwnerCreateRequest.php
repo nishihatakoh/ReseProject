@@ -32,18 +32,4 @@ class OwnerCreateRequest extends FormRequest
 
         ];
     }
-
-    // public function withValidator($validator)
-    // {
-    //     $validator->after(function ($validator)
-    //     {
-    //         $file_data = $this->file('image');
-    //         $file_extension = $file_data->getClientOriginalExtension(); //拡張子取得
-    //         $lower_case_extension = strtolower($file_extension); //拡張子を小文字に変換
-
-    //         if($lower_case_extension !== 'jpg' && $lower_case_extension !== 'svg'){
-    //             $validator->errors()->add('', 'アップロードされたファイルは画像ファイルではありません。');
-    //         }
-    //     });
-    // }
 }
