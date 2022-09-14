@@ -49,9 +49,10 @@
         @foreach($items as $item)
         <div class="card">
             <div>
-                <img class="card-img" src="data:image/png;base64,<?= $item->image ?>">
-                <!--  ↓ストレージの画像を表示するとき↓   -->
-                <!-- <img class="card-img" src="{{ $item->image }}"> -->
+                <!-- ↓本番環境での画像の表示↓ -->
+                <!-- <img class="card-img" src="data:image/png;base64,<?= $item->image ?>”> -->
+                
+                <img class="card-img" src="{{ $item->image }}">
             </div>
             <div class="card-content">
                 <h2 class="card-name">{{$item->shop_name}}</h2>

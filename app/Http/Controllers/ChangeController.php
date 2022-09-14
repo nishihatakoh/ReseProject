@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Reserve;
 use App\Models\Shop;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\ReserveRequest;
 
 class ChangeController extends Controller
 {
@@ -16,7 +17,7 @@ class ChangeController extends Controller
         return view('change',compact('reserve'));
     }
 
-    public function change (Request $request)
+    public function change (ReserveRequest $request)
     {
         $form=$request->all();
         unset($form['_token']);

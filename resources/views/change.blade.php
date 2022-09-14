@@ -31,6 +31,15 @@
             <div class="card">
                 <div class="table_item">
                     <table>
+                        @if ($errors->has('date'))
+                            <p class="error">{{$errors->first('date')}}</p>
+                        @endif
+                        @if ($errors->has('time'))
+                            <p class="error">{{$errors->first('time')}}</p>
+                        @endif
+                        @if ($errors->has('number'))
+                            <p class="error">{{$errors->first('number')}}</p>
+                        @endif
                         <tr>
                             <th>Shop</th>
                             <td>{{ $reserve->shop->shop_name }}</td>
