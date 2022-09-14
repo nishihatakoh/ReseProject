@@ -108,7 +108,7 @@
                         </div>
                     
                         <div class="card-bottom">
-                                <a class="card-bottom_button" href="{{ route('shop_all.detail', ['id' => $favorite->shop->id]) }}">詳しくみる</a>
+                                <a class="card-bottom_button" href="{{ route('shop_all.detail', ['id' => $favorite->shop_id]) }}">詳しくみる</a>
                             </form>
                             <form action="{{ route('mypage.unfavorite', ['id' => $favorite->id]) }}" method="post">
                             @csrf
