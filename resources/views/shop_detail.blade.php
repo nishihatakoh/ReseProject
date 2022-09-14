@@ -37,7 +37,7 @@
                 </div>
                 <!-- ↓本番環境での画像の表示↓ -->
                 <img class="img" src="data:image/png;base64,<?= $shop->image ?>">
-                <!-- <img class="img" src="{{ $shop-image }}"> -->
+                <!-- <img class="img" src="{{ $shop->image }}"> -->
                 <div class="card_category">
                     <p>#{{$shop->genre->genre_name}}</p>
                     <p>#{{$shop->area->area_name}}</p>
