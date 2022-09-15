@@ -158,6 +158,7 @@ return [
         'owner_name' =>'お名前',
         'user_name' => 'お名前',
         'email' => 'メールアドレス',
+        'password' => 'パスワード',
         'shop_name' => '店の名前',
         'area_id' => 'エリア',
         'genre_id' => 'ジャンル',
