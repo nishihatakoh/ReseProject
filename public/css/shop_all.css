@@ -181,13 +181,12 @@ main{
 .main {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
 }
 
 .card {
     width: 24%;
     box-shadow: 3px 3px 3px #AAA;
-    
+    margin-right: 10px;
     margin-bottom: 50px;
 }
 

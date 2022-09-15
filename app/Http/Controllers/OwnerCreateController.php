@@ -28,7 +28,7 @@ class OwnerCreateController extends Controller
         $text = $request->text;
         $owner_id = $request->owner_id;
         
-        $image_binary = base64_encode(file_get_contents($request->image->getRealPath()));
+        $image = base64_encode(file_get_contents($request->image->getRealPath()));
         
         $name=request()->file('image')->getClientOriginalName();
         $file=request()->file('image')->move('storage/images/'.$owner_id ,$name);
@@ -41,7 +41,7 @@ class OwnerCreateController extends Controller
             'genre_id' => $genre_id,
             'text' => $text,
             'owner_id' => $owner_id,
-            'image' => $image_binary
+            'image' => $image
         ]);
 
         
