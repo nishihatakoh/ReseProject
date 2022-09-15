@@ -38,7 +38,8 @@ https://calm-basin-07348.herokuapp.com/
 - MySQL  5.7.34 
 
 ## ER図
-![Rese](https://user-images.githubusercontent.com/103934454/190385654-2ff04ccb-1752-4136-9a09-bcb82aa0d7df.png)
+![Rese](https://user-images.githubusercontent.com/103934454/190385760-89bcf4c7-6da7-4cc3-9a11-95c6978a064b.svg)
+
 
 
 ## 試験に関して
