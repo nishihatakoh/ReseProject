@@ -96,9 +96,9 @@
                 <div class="card_item">
                     <div>
                         <!-- ↓本番環境での画像の表示↓ -->
-                        <img class="card-img" src="data:image/png;base64,<?= $favorite->shop->image ?>">
+                        <!-- <img class="card-img" src="data:image/png;base64,<?= $favorite->shop->image ?>"> -->
                         
-                        <!-- <img class="card-img" src="{{ $favorite->shop->image }}"> -->
+                        <img class="card-img" src="{{ $favorite->shop->image }}">
                     </div>
                     <div class="card-content">
                         <h2 class="card-name">{{ $favorite->shop->shop_name }}</h2>
