@@ -58,8 +58,6 @@ Route::get('/mypage/qrcode/detail/{id}', [MypageController::class, 'qrcodedetail
 Route::prefix('admin')->group(function () {
     Route::get('/login', [AdminLoginController::class, 'index'])->name('admin.login.index');
     Route::post('/login', [AdminLoginController::class, 'login'])->name('admin.login.login');
-    Route::get('/register', [AdminRegisterController::class, 'index'])->name('admin.register.index');
-    Route::post('/register/done', [AdminRegisterController::class, 'register'])->name('admin.register.register');
     Route::get('/', [AdminMypageController::class, 'index'])->name('admin.mypage.index')->middleware(['admin']);
     Route::post('/create', [AdminMypageController::class, 'create'])->name('admin.mypage.create')->middleware(['admin']);
     Route::get('/logout', [AdminMypageController::class, 'logout'])->name('admin.login.logout')->middleware(['admin']);

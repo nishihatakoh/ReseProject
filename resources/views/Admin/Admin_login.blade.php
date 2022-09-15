@@ -7,7 +7,6 @@
     <div>
         <nav class="nav" id="nav">
             <ul>
-                <li><a href="{{ route('admin.register.index') }}">Registration</a></li>
                 <li><a href="{{ route('admin.login.index') }}">Login</a></li>
             </ul>
         </nav>
