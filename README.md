@@ -7,16 +7,6 @@
 
 <img width="1000" alt="スクリーンショット 2022-09-06 23 49 52" src="https://user-images.githubusercontent.com/103934454/188666572-a4c7b16d-59dc-4715-ab2f-b7026de38730.png">
 
-## 技術スタック
-| カテゴリ | 技術スタック |
-| ---- | ---- |
-| フロントエンド | HTML, CSS, JavaScript |
-| バックエンド | PHP, Laravel |
-| ミドルウェア | Apache, Mailhog |
-| データベース | MySQL |
-| 環境構築 | MANP,heroku |
-| バージョン管理 | Github |
-
 
 ## アプリケーションのURL
 https://calm-basin-07348.herokuapp.com/
@@ -37,6 +27,20 @@ https://calm-basin-07348.herokuapp.com/
 パスワード:kanrisya
 
 上記から管理者のログインをお願い致します。
+
+
+
+## 技術スタック
+| カテゴリ | 技術スタック |
+| ---- | ---- |
+| フロントエンド | HTML, CSS, JavaScript |
+| バックエンド | PHP, Laravel |
+| ミドルウェア | Apache, Mailhog |
+| データベース | MySQL |
+| 環境構築 | MANP,heroku |
+| バージョン管理 | Github |
+
+
 
 
 ## 実装機能
