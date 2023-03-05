@@ -25,9 +25,9 @@ https://calm-basin-07348.herokuapp.com/
 
 - 登録済みテストログイン
 
-メールアドレス：aaa@aaa
+メールアドレス： aaa@aaa
 
-パスワード：aaaaaaaa（aが8個）
+パスワード.  ： aaaaaaaa（aが8個）
 
 
 - 管理者専用ログイン
